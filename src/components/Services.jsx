@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import React from "react";
 import service1 from "../assets/service1.png";
 import service2 from "../assets/service2.png";
 import service3 from "../assets/service3.png";
@@ -9,72 +9,57 @@ export default function Services() {
     {
       icon: service1,
       title: "Get Best Prices",
-      subTitle:
-        "Pay through our application and save thousands and get amazing rewards.",
+      subTitle: "Pay through our application and save.",
     },
     {
       icon: service2,
       title: "Covid Safe",
-      subTitle:
-        "We have all the curated hotels that have all the precaution for a covid safe environment.",
+      subTitle: "We have all the curated hotels that have.",
     },
     {
       icon: service3,
       title: "Flexible Payment",
-      subTitle:
-        " Enjoy the flexible payment through our app and get rewards on every payment.",
+      subTitle: "Enjoy the flexible payment through our app and get.",
     },
     {
       icon: service4,
       title: "Find The Best Near You",
-      subTitle:
-        "Find the best hotels and places to visit near you in a single click.",
+      subTitle: "Find the best hotels and places to visit.",
     },
   ];
+
   return (
-    <Section id="services">
-      {data.map((service, index) => {
-        return (
-          <div key={index} className="service">
+    <div className=" mb-1 md:mb-28">
+      <h1 className="mt-20 font-poppins text-[18px] text-center">CATEGORY</h1>
+      <h1 className="mt-2 font-Volkhov text-[28px] sm:text-[42px] md:text-[52px] text-center font-semibold text-blue-950">
+        We Offer Best Services
+      </h1>
+
+      <section
+        id="services"
+        className="py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 max-w-screen-xl mx-auto"
+      >
+        {data.map((service, index) => (
+          <div
+            key={index}
+            className="font-poppins flex-wrap flex-col gap-4 p-6 w-full bg-white  rounded-3xl transition-transform duration-300 hover:shadow-2xl hover:scale-105"
+          >
             <div className="icon">
-              <img src={service.icon} alt="" />
+              <img
+                src={service.icon}
+                alt={service.title}
+                className="h-12 mx-auto"
+              />
             </div>
-            <h3>{service.title}</h3>
-            <p>{service.subTitle}</p>
+            <h3 className="text-[18px] sm:text-[20px] font-semibold text-blue-950 text-center">
+              {service.title}
+            </h3>
+            <p className="text-[14px] sm:text-[16px] font-medium text-gray-700 text-center">
+              {service.subTitle}
+            </p>
           </div>
-        );
-      })}
-    </Section>
+        ))}
+      </section>
+    </div>
   );
 }
-
-const Section = styled.section`
-  padding: 5rem 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  .service {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 2rem;
-    background-color: aliceblue;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    transition: 0.3s ease-in-out;
-    &:hover {
-      transform: translateX(0.4rem) translateY(-1rem);
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-    .icon {
-      img {
-        height: 2.4rem;
-      }
-    }
-  }
-  @media screen and (min-width: 280px) and (max-width: 720px) {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-  @media screen and (min-width: 720px) and (max-width: 1080px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-`;
