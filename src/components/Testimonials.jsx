@@ -21,7 +21,7 @@ const Testimonial = () => {
   
 
   return (
-    <div className="mt-44 mb-24 w- bg-gradient-to-r from-[#ffeed8]  via-white to-[#ffeed8] flex justify-evenly  py-16">
+    <div className="mt-44  bg-gradient-to-r from-[#ffeed8]  via-white to-[#ffeed8] flex justify-evenly  py-16">
       <div>
         <h1 className="text-[16px]  font-poppins font-medium text-gray-600">
           Testimonial
