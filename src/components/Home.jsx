@@ -8,11 +8,11 @@ import Testimonial from './Testimonials'
 function Home() {
   return (
    <>
-   <HeroSection/>
+   <HeroSection />
    <Services/>
    <Destinations/>
    <Testimonial/>
-   <Footer/>
+   
    </>
   )
 }

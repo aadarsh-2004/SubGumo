@@ -6,7 +6,7 @@ const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className=" relative mt-0  w-full flex justify-center">
+    <div className="  relative mt-0  w-full flex justify-center">
       <img
         src={herobg}
         className=" absolute  md:top-0 md:left-0 w-full h-full z-0 "
@@ -18,26 +18,35 @@ const HeroSection = () => {
           {/* Text Section  */}
           <div className="w-1/2   md:w-6/12 font-Volkhov lex flex-col items-start text-left md:text-left md:py-6 ">
             <h4 className="text-[10px] md:text-[22px] font-bold text-red-600 mb-3">
-              Best Destinations around the world
+              Sabgumo - Explore the Unexplored
+
             </h4>
-            <h1 className="text-[20px] md:text-[83px] font-extrabold leading-tight mb-6">
-              Travel, enjoy and live a new and full life
+            <h1 className="text-[16px] md:text-[60px] font-extrabold leading-tight mb-6">
+            Discover new destinations, experiences, and cultures with us
+
             </h1>
             <p className="text-[8px] md:text-[18px] text-gray-600 mb-6">
-              Built Wicket longer admire do barton vanity itself do in it.{" "}
+            your gateway to unparalleled travel experiences.We're a team of passionate
+            <br className="hidden xl:block" />
+              travelers, explorers, and storytellers dedicated to helping you discover 
               <br className="hidden xl:block" />
-              Preferred to sportsmen it engrossed listening. Park gate{" "}
+              the hidden gems of our world.{" "}
+              <br className="hidden xl:block " />
+              
+              We'll take you on a journey that will leave you with unforgettable memories.
+{" "}
               <br className="hidden xl:block" />
-              sell they west hard for the.
+              
             </p>
             <div className="flex flex-col md:flex-row items-center md:items-start">
               {/* Button */}
-              <a
+              {/* <a
                 href="#!"
                 className="btn bg-blue-600  text-white text-xs md:text-lg px-6 py-3 rounded-lg shadow-lg mb-3 md:mb-0 md:mr-4"
               >
-                Explore
-              </a>
+                Start  Exploring
+
+              </a> */}
             </div>
           </div>
 

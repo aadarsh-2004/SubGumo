@@ -1,64 +1,18 @@
-import Destination1 from "../assets/Destination1.png";
-import Destination2 from "../assets/Destination2.png";
-import Destination3 from "../assets/Destination3.png";
-import Destination4 from "../assets/Destination4.png";
-import Destination5 from "../assets/Destination5.png";
-import Destination6 from "../assets/Destination6.png";
+
 import info1 from "../assets/info1.png";
 import info2 from "../assets/info2.png";
 import info3 from "../assets/info3.png";
 import { useState } from "react";
+import { DestinationsData } from "../utils/constants";
+import { NavLink } from 'react-router-dom';
 
 export default function Destinations() {
-  const data = [
-    {
-      image: Destination1,
-      title: "Singapore",
-      subTitle: "Singapore, officially the Republic of Singapore, is a",
-      cost: "38,800",
-      duration: "Approx 2 night trip",
-    },
-    {
-      image: Destination2,
-      title: "Thailand",
-      subTitle: "Thailand is a Southeast Asian country. It's known for",
-      cost: "54,200",
-      duration: "Approx 2 night trip",
-    },
-    {
-      image: Destination3,
-      title: "Paris",
-      subTitle: "Paris, France's capital, is a major European city and a",
-      cost: "45,500",
-      duration: "Approx 2 night trip",
-    },
-    {
-      image: Destination4,
-      title: "New Zealand",
-      subTitle: "New Zealand is an island country in the",
-      cost: "24,100",
-      duration: "Approx 1 night trip",
-    },
-    {
-      image: Destination5,
-      title: "Bora Bora",
-      subTitle: "Bora Bora is a small South Pacific island northwest of",
-      cost: "95,400",
-      duration: "Approx 2 night 2 day trip",
-    },
-    {
-      image: Destination6,
-      title: "London",
-      subTitle: "London, the capital of England and the United",
-      cost: "38,800",
-      duration: "Approx 3 night 2 day trip",
-    },
-  ];
-  const packages = ["The Package Holiday", "The Group Tour", "Upcoming Tours"];
+ 
+  const packages = [ "The Group Tour", "Upcoming Tours"];
   const [active, setActive] = useState(1);
 
   return (
-    <section id="recommend" className="py-8">
+    <section id="destination" className="py-8">
       {/* Title */}
       <div className="text-center mb-8">
         <h2
@@ -93,13 +47,14 @@ export default function Destinations() {
 
       {/* Destinations */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 max-w-7xl mx-auto">
-        {data.map((destination, index) => (
-          <div
-            key={index}
+        {DestinationsData.map((destination) => (
+        <NavLink key={destination.id} to={`/destination/${destination.id}`}>
+            <div
+            key={destination.id}
             className="bg-white bg-gradient-to-t from-white via-gray-50 to-white backdrop-blur-3xl rounded-xl p-4 shadow-gray-600 shadow-xl hover:shadow-lg transition-transform transform hover:scale-105 hover:-translate-y-4"
           >
             <img
-              src={destination.image}
+              src={destination.Cardimg}
               alt={destination.title}
               className="w-full rounded-lg mb-4"
             />
@@ -134,6 +89,7 @@ export default function Destinations() {
               <span>1000 Kms</span>
             </div>
           </div>
+        </NavLink>
         ))}
       </div>
     </section>

@@ -1,21 +1,25 @@
 import React from "react";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { FaInstagram } from "react-icons/fa";
+import { FileText, Shield, Copyright } from 'lucide-react';
 
 export const Footer = () => {
   return (
     <footer className="bg-white mt-16 md:mt-24 font-poppins text-white py-8">
       <div className="max-w-7xl text-black mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: Logo and Company Info */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Tripify</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Sabgumo</h2>
             <p className="text-gray-700 text-sm md:text-base mb-2">
               Explore the world with ease. Your journey begins here.
             </p>
-            <p className="text-gray-700 text-sm md:text-base">
-              © 2025 Tripify, All Rights Reserved.
-            </p>
+            <div className="flex items-center space-x-2 text-gray-700">
+              <Copyright className="w-4 h-4" />
+              <p className="text-sm md:text-base">
+                2023 Sabgumo. All rights reserved.
+              </p>
+            </div>
           </div>
 
           {/* Column 2: Navigation Links */}
@@ -42,6 +46,33 @@ export const Footer = () => {
               </li>
               <li>
                 <a
+                  href="#contact"
+                  className="text-gray-700 hover:text-blue-600 transition duration-300 text-sm md:text-base"
+                >
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Legal Information */}
+          <div>
+            <h3 className="text-lg md:text-xl font-semibold mb-4">
+              Legal
+            </h3>
+            <ul className="space-y-2">
+              <li className="flex items-center space-x-2">
+                <FileText className="w-4 h-4 text-gray-700" />
+                <a
+                  href="#terms"
+                  className="text-gray-700 hover:text-blue-600 transition duration-300 text-sm md:text-base"
+                >
+                  Terms and Conditions
+                </a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Shield className="w-4 h-4 text-gray-700" />
+                <a
                   href="#privacy"
                   className="text-gray-700 hover:text-blue-600 transition duration-300 text-sm md:text-base"
                 >
@@ -51,7 +82,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Social Media & Newsletter */}
+          {/* Column 4: Social Media & Newsletter */}
           <div>
             <h3 className="text-lg md:text-xl font-semibold mb-4">
               Stay Connected
@@ -65,13 +96,13 @@ export const Footer = () => {
             </div>
 
             {/* Newsletter */}
-            <div className="flex items-center">
+            <div className="flex flex-col space-y-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full p-2 rounded-l-md text-gray-900 text-sm md:text-base"
+                className="w-full p-2 border border-gray-300 rounded-md text-gray-900 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <button className="p-2 bg-blue-600 rounded-r-md text-white text-sm md:text-base">
+              <button className="w-full p-2 bg-blue-600 rounded-md text-white text-sm md:text-base hover:bg-blue-700 transition duration-300">
                 Subscribe
               </button>
             </div>
@@ -81,3 +112,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;
