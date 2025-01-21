@@ -69,78 +69,116 @@ export const DestinationsData = [
         activities: [
           {
             time: "Morning",
-            description: "Welcome at Srinagar airport and transfer to hotel",
-          },
-          {
-            time: "Evening",
-            description: "Srinagar Local Market Tour (If time permits)",
-          },
-        ],
-      },
-      {
-        day: 2,
-        title: "Srinagar Local Sightseeing and House Boat Check-in",
-        activities: [
-          {
-            time: "Morning",
-            description:
-              "Visit Apple Garden and Mughal Gardens - Nishat Bagh and Shalimar Bagh",
-          },
-          {
-            time: "Evening",
-            description:
-              "Check-in to houseboat at Dal Lake and enjoy shikara ride",
-          },
-        ],
-      },
-      {
-        day: 3,
-        title: "Gulmarg Trip",
-        activities: [
-          {
-            time: "Morning",
-            description:
-              "Drive to Gulmarg through scenic villages and rice fields",
+            title: " Welcome to Srinagar",
+            description: "On arrival at the Srinagar airport, you will be welcomed & received by our representative, who will then escort you to the hotel.",
           },
           {
             time: "Afternoon",
-            description:
-              "Visit world's highest golf course and enjoy winter sports activities",
+            title: " Exploring Local Streets",
+            description: "If time allows, we’ll explore lively streets and local markets, discovering unique sights and experiences",
           },
           {
-            time: "Evening",
-            description: "Return to Srinagar for overnight stay",
+            time: "Meal",
+            title: "Dining Delights ",
+            description: "we’ll enjoy a delicious dinner at a local restaurant, savoring the flavors of the region.",
           },
         ],
       },
       {
-        day: 4,
-        title: "Pahalgam Trip",
-        activities: [
+        "day": 2,
+        "title": "Srinagar Local Sightseeing and House Boat Check-in",
+        "activities": [
           {
-            time: "Morning",
-            description: "Drive to Pahalgam (2,133 mts)",
+            "time": "Morning",
+            "title": "House Boat Check-in",
+            "description": " The houseboat at Dal lake is going to be your romantic abode for the first night of your enchanting Kashmir tour. [Breakfast  Included]"
           },
           {
-            time: "Afternoon",
-            description: "Explore scenic beauty of Pahalgam",
+            "time": "Afternoon",
+            "title":"Exploring Kashmir's Paradise Gardens",
+            "description": "Visit the world-famous Apple Garden, Mughal Gardens - Nishat Bagh (The garden of pleasure), Shalimar Bagh"
           },
-        ],
+          {
+            "time": "Evening",
+            "title": "Shikara Ride on Dal Lake",
+            "description": "Enjoy a serene shikara ride on Dal Lake, surrounded by stunning mountains and vibrant floating gardens"
+          },
+          {
+            "time": "Meal",
+            "title": "Dining Delights ",
+            "description": "Enjoy a romantic candlelight dinner with beautiful décor for a memorable evening"
+          }
+        ]
       },
       {
-        day: 5,
-        title: "Departure",
-        activities: [
+        "day": 3,
+        "title": "Gulmarg Trip",
+        "activities": [
           {
-            time: "Morning",
-            description: "Breakfast and checkout from hotel",
+            "time": "Morning",
+            "title": "Scenic Drive to Gulmarg",
+            "description": "After breakfast, embark on a scenic drive to Gulmarg, known as the ‘Meadow of Flowers.’ Admire the beautiful landscapes of rice fields and colorful villages along the way."
           },
           {
-            time: "Afternoon",
-            description: "Transfer to Srinagar Airport for departure",
+            "time": "Afternoon",
+            "title": "Explore Gulmarg",
+            "description": "Visit the world’s highest golf course, Khilanmarg, and explore the area known for its winter sports like skiing."
           },
-        ],
+          {
+            "time": "Evening",
+            "title": "Return to Srinagar",
+            "description": "After a day of adventure, head back to Srinagar for an overnight stay at the hotel."
+          },
+          {
+            "time": "Note",
+            "title": "Meals : Breakfast & Candlelight Dinner",
+            "description": "Enjoy a tasty breakfast and a cozy candlelight dinner with cake and lovely décor to make your evening unforgettable"
+          }
+        ]
       },
+      {
+        "day": 4,
+        "title": "Pahalgam Trip",
+        "activities": [
+          {
+            "time": "Morning",
+            "title": "Heading to Pahalgam",
+            "description": "Enjoy a scenic drive to Pahalgam (2,133 meters), a town surrounded by breathtaking beauty."
+          },
+          {
+            "time": "Afternoon",
+            "title": "Discover Pahalgam's Charm",
+            "description": "Enjoy the scenic views of Pahalgam, a peaceful escape in the lap of nature."
+          },
+          {
+            "time": "Evening",
+            "title": "Relaxing at Pahalgam",
+            "description": "After exploring, unwind and relax at the hotel, soaking in the tranquil beauty of the area."
+          },
+          {
+            "time": "Note",
+            "title": "Meals : Breakfast & Dinner",
+            "description": "Enjoy a tasty breakfast and dinner and make your evening unforgettable"
+          }
+          
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Checkout",
+        "activities": [
+          {
+            "time": "Morning",
+            "title": "Final Breakfast in Srinagar",
+            "description": "Enjoy a delightful breakfast at your hotel in Srinagar before checking out."
+          },
+          {
+            "time": "Afternoon",
+            "title": "Farewell to Kashmir",
+            "description": "After breakfast, you’ll be transferred to Srinagar Airport, where you'll board your flight, carrying unforgettable memories of your Kashmir journey."
+          }
+        ]
+      }
     ],
   },
   {
@@ -373,7 +411,7 @@ export const DestinationsData = [
     subTitle: "Experience Royal Rajasthan in the City of Lakes and Palaces",
     originalCost: "6999",
     cost: "42,500",
-    isUpcoming: false,
+    isUpcoming: true,
     duration: "Approx 4 night trip",
     description: "Discover the romantic city of Udaipur, with its stunning lakes, grand palaces, and rich cultural heritage.",
     mapsIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.764652392266!2d73.68207867374668!3d24.588058197657894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e567937f893f%3A0xb1d3c369838889!2sUdaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1704000000000!5m2!1sen!2sin",

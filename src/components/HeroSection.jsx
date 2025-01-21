@@ -5,7 +5,7 @@ const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="relative  w-full flex justify-center">
+    <div className="relative top-14  w-full flex justify-center">
       <img
         src={herobg}
         className="absolute md:top-0 md:left-0 w-full h-full z-0"
@@ -20,7 +20,7 @@ const HeroSection = () => {
               Sabgumo - Explore the Unexplored
             </h4>
             <h1 className="text-[25px] md:text-[60px] font-extrabold leading-tight mb-6 animate-slide-in">
-              Discover new destinations, experiences, and cultures with us
+              Discover new <span className="bg-gradient-to-r from-purple-600 to-orange-600 bg-clip-text text-clip-border text-transparent ">destinations</span>, experiences, and cultures with us
             </h1>
             <p className="text-[8px] md:text-[17px]">
         Your gateway to{' '}

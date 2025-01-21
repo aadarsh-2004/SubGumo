@@ -1,4 +1,4 @@
-import { useState, useCallback, memo } from "react";
+import { useState, useCallback, memo, useEffect } from "react";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { FaInstagram } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
@@ -17,31 +17,25 @@ const Logo = memo(() => (
   </NavLink>
 ));
 
-const SocialButton = memo(
-  
-  ({ href, icon: Icon, gradientFrom, gradientTo, label }) => {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative block"
-        aria-label={label}
+const SocialButton = memo(({ href, icon: Icon, gradientFrom, gradientTo, label, shadowColor }) => {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative block"
+      aria-label={label}
     >
       <div
-        className={`absolute -inset-3 rounded-full opacity-20 group-hover:opacity-0 transition-opacity duration-300 animate-bounce-slow`}
-        
+        className="absolute -inset-3 rounded-full opacity-20 group-hover:opacity-0 transition-opacity duration-300 animate-bounce-slow"
       />
       <div
         className="absolute -inset-2 rounded-full opacity-0 group-hover:opacity-100 blur transition-opacity duration-300"
-        style={{
-          background: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`,
-        }}
+        
       />
       <div
-        className={`relative p-3 bg-gradient-to-br from-white to-${shadowColor}-50 rounded-full 
-      shadow-lg shadow-${shadowColor}-500/20 transition-all duration-300 
-      group-hover:shadow-${shadowColor}-500/40 group-hover:scale-110 group-hover:rotate-12`}
+        className={`relative p-3 rounded-full shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-12`}
+        
       >
         {/* Ping animation layer */}
         <div
@@ -51,51 +45,41 @@ const SocialButton = memo(
 
         {/* Hover glow effect */}
         <div
-          className="absolute -inset-2 rounded-full opacity-0 "
+          className="absolute -inset-2 rounded-full opacity-0 group-hover:opacity-10 blur"
           style={{
             background: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`,
           }}
         />
 
         {/* Button content */}
-        <div
-          className="relative flex items-center justify-center p-3 rounded-full transition-all duration-300
-        bg-gradient-to-br from-white to-gray-50
-        shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-          style={{
-            boxShadow: `0 4px 6px -1px ${gradientFrom}20, 0 2px 4px -1px ${gradientFrom}10`,
-          }}
-        >
+        <div className="relative flex items-center justify-center">
           <Icon
-            className="w-6 h-6 transition-transform group-hover:scale-110"
+            className="w-6 h-6 transition-transform group-hover:scale-125"
             style={{ color: gradientFrom }}
           />
         </div>
-      </a>
-    );
-  }
-);
+      </div>
+    </a>
+  );
+});
 
 const NavbarLink = memo(({ navlink, onClick }) => (
   <NavLink
     to={navlink.href}
     onClick={onClick}
     className={({ isActive }) =>
-      `block px-6 py-3 lg:px-4 lg:py-2 relative group transition-colors duration-300
-    ${
-      navlink.name === "Inquire Now"
-        ? `text-orange-500 font-bold border border-orange-500 rounded-md bg-orange-50`
-        : "text-gray-700"
-    }
-    ${
-      isActive && navlink.name !== "Inquire Now"
-        ? "text-blue-600 font-bold"
-        : "text-gray-700 hover:text-blue-600"
-    }`
+      `block px-6 py-3 lg:px-4 lg:py-2  relative group transition-colors duration-300
+      ${
+        navlink.name === "Inquire Now"
+          ? "font-bold  rounded-md border-2 border-purple-500  bg-gradient-to-r from-purple-600 to-orange-600 bg-clip-text text-clip-border text-transparent  hover:scale-105  "
+          : isActive
+          ? " bg-gradient-to-r from-orange-600 to bg-orange-500 bg-clip-text text-transparent font-bold"
+      : " text-gray-900 hover:bg-gradient-to-r  "
+      }`
     }
   >
     {navlink.name}
-    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300" />
+    <span className="absolute bottom-0 left-0 w-0 h-0.5  group-hover:w-full transition-all duration-300" />
   </NavLink>
 ));
 
@@ -103,7 +87,6 @@ const Navbar = () => {
   const [navbarState, setNavbarState] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Memoized handlers
   const toggleNavbar = useCallback(() => {
     setNavbarState((prev) => !prev);
   }, []);
@@ -112,13 +95,11 @@ const Navbar = () => {
     setNavbarState(false);
   }, []);
 
-  // Use ResizeObserver for better performance
-  useState(() => {
+  useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
 
-    // Throttle scroll events
     let ticking = false;
     const throttledScroll = () => {
       if (!ticking) {
@@ -136,8 +117,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`  fixed bg-transparent backdrop-blur-2xl  w-full z-50 transition-all duration-300 font-poppins 
-      ${scrolled ? "py-2 bg-white shadow-lg" : "py-4 bg-white/90"}`}
+      className={` w-full fixed z-50 transition-all duration-300 font-poppins   font-semibold
+      ${scrolled ? "   py-4 bg-transparent backdrop-blur-3xl shadow-lg" : "py-3 bg-transparent backdrop-blur-2xl"}`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 max-w-7xl">
         <Logo />
@@ -147,7 +128,7 @@ const Navbar = () => {
           onClick={toggleNavbar}
           aria-label="Toggle Menu"
         >
-          <div className="w-6 h-5  relative flex flex-col justify-between">
+          <div className="w-6 h-5 relative  flex flex-col justify-between">
             {[0, 1, 2].map((index) => (
               <span
                 key={index}
@@ -169,17 +150,13 @@ const Navbar = () => {
           className={`fixed inset-0 lg:static lg:flex lg:items-center lg:gap-8 transition-all duration-300
           ${
             navbarState
-              ? "visible opacity-100 bg-white/95 backdrop-blur-lg"
+              ? "visible opacity-100 bg-white backdrop-blur-md"
               : "invisible lg:visible opacity-0 lg:opacity-100"
           }`}
         >
           <ul
-            className={`flex flex-col lg:flex-row items-center gap-6 pt-20 lg:pt-0 transition-all duration-500
-            ${
-              navbarState
-                ? "translate-x-0"
-                : "-translate-x-full lg:translate-x-0"
-            }`}
+            className={`b flex flex-col lg:flex-row items-center gap-6 pt-20 lg:pt-0 transition-all duration-500
+            ${navbarState ? "translate-x-0 bg-white backdrop-blur-md" : "-translate-x-full lg:translate-x-0"}`}
           >
             {NavbarLinks.map((navlink) => (
               <li key={navlink.id} className="w-full lg:w-auto">
@@ -194,14 +171,16 @@ const Navbar = () => {
               icon={IoLogoWhatsapp}
               gradientFrom="#4ade80"
               gradientTo="#16a34a"
-              shadowColor="green"
+              shadowColor="#22c55e"
+              label="WhatsApp"
             />
             <SocialButton
               href="https://www.instagram.com/your_instagram_handle"
               icon={FaInstagram}
               gradientFrom="#ec4899"
               gradientTo="#a855f7"
-              shadowColor="pink"
+              shadowColor="#ec4899"
+              label="Instagram"
             />
           </div>
         </div>

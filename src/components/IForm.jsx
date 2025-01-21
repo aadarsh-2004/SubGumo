@@ -51,9 +51,10 @@ const IForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#ffeed8] py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+    <div className=" min-h-screen  bg-[#ffeed8] py-12  pt-24 px-4 sm:px-6 lg:px-8">
+      <div className=" max-w-4xl mx-auto">
+        <div className="text-center  mb-12">
+
           <h2 className="text-3xl font-bold text-black sm:text-4xl mb-4">Start Your Journey</h2>
           <p className="text-lg text-gray-700">
             Fill out the form below or chat with us on WhatsApp to plan your dream trip!
