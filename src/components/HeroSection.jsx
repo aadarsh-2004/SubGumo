@@ -5,7 +5,7 @@ const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="relative mt-0 w-full flex justify-center">
+    <div className="relative  w-full flex justify-center">
       <img
         src={herobg}
         className="absolute md:top-0 md:left-0 w-full h-full z-0"

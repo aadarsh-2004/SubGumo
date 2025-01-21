@@ -26,8 +26,8 @@ const SocialButton = memo(
       className="group relative"
     >
       <div
-        className={`absolute -inset-3 rounded-full opacity-20 group-hover:opacity-0 transition-opacity duration-300 animate-ping`}
-        style={{ background: gradientFrom }}
+        className={`absolute -inset-3 rounded-full opacity-20 group-hover:opacity-0 transition-opacity duration-300 animate-bounce-slow`}
+        
       />
       <div
         className="absolute -inset-2 rounded-full opacity-0 group-hover:opacity-100 blur transition-opacity duration-300"
@@ -54,13 +54,13 @@ const NavbarLink = memo(({ navlink, onClick }) => (
     to={navlink.href}
     onClick={onClick}
     className={({ isActive }) =>
-      `block px-6 py-3 lg:px-4 lg:py-2 relative group transition-colors duration-300
+      `block px-6 py-3  lg:px-4 lg:py-2 relative group transition-colors duration-300
       ${
         isActive
           ? "text-orange-500 font-bold"
-          : "text-gray-700 hover:text-blue-600"
+          : "text-black font-medium hover:text-blue-600"
       }`
-    }
+    } 
   >
     {navlink.name}
     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300" />
@@ -104,7 +104,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed  w-full z-50 transition-all duration-300 font-poppins 
+      className={`  fixed bg-transparent backdrop-blur-2xl  w-full z-50 transition-all duration-300 font-poppins 
       ${scrolled ? "py-2 bg-white shadow-lg" : "py-4 bg-white/90"}`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 max-w-7xl">
@@ -115,7 +115,7 @@ const Navbar = () => {
           onClick={toggleNavbar}
           aria-label="Toggle Menu"
         >
-          <div className="w-6 h-5 relative flex flex-col justify-between">
+          <div className="w-6 h-5  relative flex flex-col justify-between">
             {[0, 1, 2].map((index) => (
               <span
                 key={index}

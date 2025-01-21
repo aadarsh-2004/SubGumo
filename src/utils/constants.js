@@ -59,7 +59,7 @@ export const DestinationsData = [
     cost: "15000",
     duration: "Approx 5 night trip",
     isUpcoming: false,
-    description: "Experience the serenity and beauty of Kashmir's landscapes.",
+    description: "Discover the Paradise of India: Kashmir  Nestled in the lap of the majestic Himalayas, Kashmir is a land of unparalleled beauty, often referred to as Paradise on Earth. With its snow-capped peaks, lush green valleys, sparkling rivers, and serene lakes, Kashmir offers an enchanting escape for travelers seeking tranquility and adventure.",
     mapsIframe:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1036.8074022026033!2d76.4038594499299!3d31.633345308943166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b2a7b793adcfd%3A0x5e65f5500e37035e!2sKashmir%2C%20Himachal%20Pradesh%20177006!5e0!3m2!1sen!2sin!4v1737195230919!5m2!1sen!2sin",
     itineraryData: [
@@ -214,7 +214,7 @@ export const DestinationsData = [
 
     duration: "Approx 5-night trip",
     description:
-      "Experience the magic of Manali with its snow-capped peaks and adventure activities.",
+      "Tucked away in the picturesque Kullu Valley, Manali is a serene haven that blends natural beauty, adventure, and tranquility. Surrounded by snow-covered peaks, dense pine forests, and gushing rivers, Manali is a destination that appeals to both thrill-seekers and peace-lovers alike.",
     mapsIframe:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1036.8074022026033!2d76.4038594499299!3d31.633345308943166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b2a7b793adcfd%3A0x5e65f5500e37035e!2sManali!5e0!3m2!1sen!2sin!4v1737195230919!5m2!1sen!2sin",
     itineraryData: [
