@@ -18,6 +18,7 @@ const Logo = memo(() => (
 ));
 
 const SocialButton = memo(
+  
   ({ href, icon: Icon, gradientFrom, gradientTo, label }) => {
     return (
       <a
@@ -26,6 +27,21 @@ const SocialButton = memo(
         rel="noopener noreferrer"
         className="group relative block"
         aria-label={label}
+    >
+      <div
+        className={`absolute -inset-3 rounded-full opacity-20 group-hover:opacity-0 transition-opacity duration-300 animate-bounce-slow`}
+        
+      />
+      <div
+        className="absolute -inset-2 rounded-full opacity-0 group-hover:opacity-100 blur transition-opacity duration-300"
+        style={{
+          background: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`,
+        }}
+      />
+      <div
+        className={`relative p-3 bg-gradient-to-br from-white to-${shadowColor}-50 rounded-full 
+      shadow-lg shadow-${shadowColor}-500/20 transition-all duration-300 
+      group-hover:shadow-${shadowColor}-500/40 group-hover:scale-110 group-hover:rotate-12`}
       >
         {/* Ping animation layer */}
         <div
@@ -120,7 +136,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed  w-full z-50 transition-all duration-300 font-poppins 
+      className={`  fixed bg-transparent backdrop-blur-2xl  w-full z-50 transition-all duration-300 font-poppins 
       ${scrolled ? "py-2 bg-white shadow-lg" : "py-4 bg-white/90"}`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 max-w-7xl">
@@ -131,7 +147,7 @@ const Navbar = () => {
           onClick={toggleNavbar}
           aria-label="Toggle Menu"
         >
-          <div className="w-6 h-5 relative flex flex-col justify-between">
+          <div className="w-6 h-5  relative flex flex-col justify-between">
             {[0, 1, 2].map((index) => (
               <span
                 key={index}
