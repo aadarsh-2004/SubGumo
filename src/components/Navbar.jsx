@@ -18,12 +18,15 @@ const Logo = memo(() => (
 ));
 
 const SocialButton = memo(
-  ({ href, icon: Icon, gradientFrom, gradientTo, shadowColor }) => (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative"
+  
+  ({ href, icon: Icon, gradientFrom, gradientTo, label }) => {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative block"
+        aria-label={label}
     >
       <div
         className={`absolute -inset-3 rounded-full opacity-20 group-hover:opacity-0 transition-opacity duration-300 animate-bounce-slow`}
@@ -40,13 +43,37 @@ const SocialButton = memo(
       shadow-lg shadow-${shadowColor}-500/20 transition-all duration-300 
       group-hover:shadow-${shadowColor}-500/40 group-hover:scale-110 group-hover:rotate-12`}
       >
-        <Icon
-          className={`text-2xl text-${shadowColor}-500 group-hover:text-${shadowColor}-600 
-        transition-all duration-300 group-hover:-rotate-12`}
+        {/* Ping animation layer */}
+        <div
+          className="absolute -inset-3 rounded-full opacity-20 animate-ping"
+          style={{ backgroundColor: gradientFrom }}
         />
-      </div>
-    </a>
-  )
+
+        {/* Hover glow effect */}
+        <div
+          className="absolute -inset-2 rounded-full opacity-0 "
+          style={{
+            background: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`,
+          }}
+        />
+
+        {/* Button content */}
+        <div
+          className="relative flex items-center justify-center p-3 rounded-full transition-all duration-300
+        bg-gradient-to-br from-white to-gray-50
+        shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+          style={{
+            boxShadow: `0 4px 6px -1px ${gradientFrom}20, 0 2px 4px -1px ${gradientFrom}10`,
+          }}
+        >
+          <Icon
+            className="w-6 h-6 transition-transform group-hover:scale-110"
+            style={{ color: gradientFrom }}
+          />
+        </div>
+      </a>
+    );
+  }
 );
 
 const NavbarLink = memo(({ navlink, onClick }) => (
@@ -54,13 +81,18 @@ const NavbarLink = memo(({ navlink, onClick }) => (
     to={navlink.href}
     onClick={onClick}
     className={({ isActive }) =>
-      `block px-6 py-3  lg:px-4 lg:py-2 relative group transition-colors duration-300
-      ${
-        isActive
-          ? "text-orange-500 font-bold"
-          : "text-black font-medium hover:text-blue-600"
-      }`
-    } 
+      `block px-6 py-3 lg:px-4 lg:py-2 relative group transition-colors duration-300
+    ${
+      navlink.name === "Inquire Now"
+        ? `text-orange-500 font-bold border border-orange-500 rounded-md bg-orange-50`
+        : "text-gray-700"
+    }
+    ${
+      isActive && navlink.name !== "Inquire Now"
+        ? "text-blue-600 font-bold"
+        : "text-gray-700 hover:text-blue-600"
+    }`
+    }
   >
     {navlink.name}
     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300" />

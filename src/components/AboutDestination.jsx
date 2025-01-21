@@ -10,12 +10,12 @@ import {
   Calendar,
   Heart,
   X,
+  ChevronLeft,
   ChevronRight,
-  Users,
-  Camera,
 } from "lucide-react";
 import { DestinationsData } from "../utils/constants";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "./ui/button";
 
 const getTimeIcon = (time) => {
   switch (time.toLowerCase()) {
@@ -194,26 +194,18 @@ const ItineraryModal = ({ data, onClose }) => {
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div
         className="absolute inset-0 bg-black/75 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      <div className="relative w-full max-w-7xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-5xl h-full bg-white rounded-2xl shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="p-4 sm:p-6 md:p-8 bg-gradient-to-r from-orange-100 via-rose-100 to-purple-100">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-            <div className="space-y-3 flex-1">
-              <div className="flex flex-wrap items-center gap-2">
-                <div className="bg-white/80 backdrop-blur px-3 py-1.5 rounded-full shadow-sm flex items-center gap-2">
-                  <Star className="w-4 h-4 text-yellow-500" />
-                  <span className="text-sm font-medium text-gray-800">
-                    Premium Journey
-                  </span>
-                </div>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
+        <div className="p-4 bg-gradient-to-r from-orange-100 via-rose-100 to-purple-100">
+          <div className="flex justify-between items-center gap-4">
+            <div>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
                 Your Curated Adventure
               </h2>
               <p className="text-sm sm:text-base text-gray-600">
@@ -228,11 +220,9 @@ const ItineraryModal = ({ data, onClose }) => {
               <X className="w-5 h-5 text-gray-600 hover:rotate-90 transition-transform" />
             </button>
           </div>
-
-          {/* Progress Bar */}
-          <div className="w-full bg-white/50 rounded-full h-2 overflow-hidden">
+          <div className="w-full bg-white/50 rounded-full h-2 mt-2">
             <div
-              className="bg-gradient-to-r from-orange-500 to-rose-500 h-full transition-all duration-500 ease-in-out"
+              className="bg-gradient-to-r from-orange-500 to-rose-500 h-full transition-all"
               style={{
                 width: `${
                   ((selectedDay + 1) / data.itineraryData.length) * 100
@@ -250,84 +240,52 @@ const ItineraryModal = ({ data, onClose }) => {
         >
           <div className="flex overflow-x-auto scrollbar-hide p-3 gap-2">
             {data.itineraryData.map((day, index) => (
-              <button
+              <Button
                 key={day.day}
+                variant={selectedDay === index ? "default" : "outline"}
                 onClick={() => setSelectedDay(index)}
-                className={`flex-none px-4 py-2 rounded-xl transition-all duration-300 flex items-center gap-2
-                  ${
-                    selectedDay === index
-                      ? "bg-gradient-to-r from-orange-500 to-rose-500 text-white shadow-md"
-                      : "bg-gray-50 text-gray-600 hover:bg-orange-50 hover:text-orange-600"
-                  }`}
+                className={`flex-none px-4 py-2 text-sm sm:text-base rounded-xl transition-all
+                    ${
+                      selectedDay === index
+                        ? "bg-gradient-to-r from-orange-500 to-rose-500 text-white"
+                        : ""
+                    }
+                  `}
               >
                 <Calendar
-                  className={`w-4 h-4 ${
+                  className={`w-4 h-4 mr-2 ${
                     selectedDay === index ? "text-white" : "text-orange-500"
                   }`}
                 />
-                <span className="font-medium whitespace-nowrap">
-                  Day {day.day}
-                </span>
-              </button>
+                Day {day.day}
+              </Button>
             ))}
           </div>
         </div>
 
         {/* Content */}
         <div
-          className="overflow-auto p-4 sm:p-6 md:p-8 max-h-[calc(90vh-280px)]"
+          className="overflow-auto p-4 max-h-[calc(100vh-200px)] scrollbar-hide"
           onScroll={handleScroll}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
-            {data.itineraryData.map((day, dayIndex) => (
-              <Card
-                key={day.day}
-                className={`transition-all duration-500 hover:shadow-lg
-                  ${
-                    selectedDay === dayIndex
-                      ? "ring-2 ring-orange-500 ring-offset-2 scale-100 opacity-100"
-                      : "scale-95 opacity-70 hover:opacity-90 hover:scale-98"
-                  }`}
-              >
-                <CardContent className="p-0">
-                  <div className="p-4 sm:p-6 bg-gradient-to-br from-gray-50 to-white rounded-t-xl">
-                    <div className="flex items-center gap-4">
-                      <div className="p-2 sm:p-3 rounded-xl bg-gradient-to-br from-orange-100 to-rose-100 shadow-sm">
-                        <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {data.itineraryData[selectedDay]?.activities.map(
+              (activity, index) => (
+                <Card key={index} className="transition-all hover:shadow-lg">
+                  <CardContent>
+                    <div className="flex items-start gap-3 p-4">
+                      <div className="p-2 bg-white shadow rounded-full">
+                        {getTimeIcon(activity.time)}
                       </div>
                       <div>
-                        <span className="text-sm text-gray-500">
-                          Day {day.day}
-                        </span>
-                        <h3 className="text-base sm:text-lg font-bold text-gray-800">
-                          {day.title}
-                        </h3>
+                        <h4 className="text-sm font-medium">{activity.time}</h4>
+                        <p className="text-gray-600">{activity.description}</p>
                       </div>
                     </div>
-                  </div>
-                  <div className="p-4 sm:p-6 space-y-3">
-                    {day.activities.map((activity, index) => (
-                      <div
-                        key={index}
-                        className="flex items-start gap-3 p-3 rounded-lg bg-gray-50 hover:bg-white transition-all hover:shadow-sm"
-                      >
-                        <div className="p-2 bg-white shadow-sm rounded-full">
-                          {getTimeIcon(activity.time)}
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-medium text-gray-800 text-sm sm:text-base">
-                            {activity.time}
-                          </h4>
-                          <p className="text-sm text-gray-600 break-words">
-                            {activity.description}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              )
+            )}
           </div>
         </div>
       </div>
