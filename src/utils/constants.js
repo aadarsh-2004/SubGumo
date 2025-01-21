@@ -55,10 +55,10 @@ export const DestinationsData = [
     title: "Chalo Kashmir",
     subTitle:
       "Embark on a Journey to Kashmir: The Crown Jewel of India's Natural Beauty",
-    originalCost: "6999",
-    cost: "4990",
+    originalCost: "30000",
+    cost: "15000",
     duration: "Approx 5 night trip",
-    isUpcoming: true,
+    isUpcoming: false,
     description: "Experience the serenity and beauty of Kashmir's landscapes.",
     mapsIframe:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1036.8074022026033!2d76.4038594499299!3d31.633345308943166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b2a7b793adcfd%3A0x5e65f5500e37035e!2sKashmir%2C%20Himachal%20Pradesh%20177006!5e0!3m2!1sen!2sin!4v1737195230919!5m2!1sen!2sin",
@@ -364,79 +364,163 @@ export const DestinationsData = [
       },
     ],
   },
+  {
+    id: 5,
+    name: "Udaipur",
+    Cardimg: UdaipurCoverImg,
+    img: UdaipurInfoImg,
+    title: "उदयपुर की सैर",
+    subTitle: "Experience Royal Rajasthan in the City of Lakes and Palaces",
+    cost: "42,500/- Only",
+    isUpcoming: false,
+    duration: "Approx 4 night trip",
+    description: "Discover the romantic city of Udaipur, with its stunning lakes, grand palaces, and rich cultural heritage.",
+    mapsIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.764652392266!2d73.68207867374668!3d24.588058197657894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e567937f893f%3A0xb1d3c369838889!2sUdaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1704000000000!5m2!1sen!2sin",
+    itineraryData: [
+      {
+        day: 1,
+        title: "Arrival in Udaipur",
+        activities: [
+          {
+            time: "Morning",
+            description: "Welcome at Maharana Pratap Airport and transfer to hotel"
+          },
+          {
+            time: "Afternoon",
+            description: "Check-in at luxury lakeside accommodation and lunch"
+          },
+          {
+            time: "Evening",
+            description: "Sunset boat ride on Lake Pichola with views of the City Palace"
+          }
+        ]
+      },
+      {
+        day: 2,
+        title: "City Palace and Cultural Tour",
+        activities: [
+          {
+            time: "Morning",
+            description: "Visit the magnificent City Palace complex"
+          },
+          {
+            time: "Afternoon",
+            description: "Explore Jagdish Temple and local art galleries"
+          },
+          {
+            time: "Evening",
+            description: "Cultural performance and dinner at Bagore Ki Haveli"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 6,
+    name: "Nainital",
+    Cardimg: NainitalCardImg,
+    img: NainitalInfoImg,
+    title: "नैनीताल भ्रमण",
+    subTitle: "Where Mountains Meet Lakes in Perfect Harmony",
+    cost: "35,999/- Only",
+    isUpcoming: true,
+    duration: "Approx 3 night trip",
+    description: "Experience the charm of this hill station nestled in the Kumaon foothills of the Himalayas.",
+    mapsIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.868895045592!2d79.46151267385668!3d29.380632947439948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a0a1bc28fd9d61%3A0x7cae7ba916987db3!2sNainital%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1704000000000!5m2!1sen!2sin",
+    itineraryData: [
+      {
+        day: 1,
+        title: "Welcome to Nainital",
+        activities: [
+          {
+            time: "Morning",
+            description: "Scenic drive from Pantnagar Airport to Nainital"
+          },
+          {
+            time: "Afternoon",
+            description: "Hotel check-in and lunch with lake view"
+          },
+          {
+            time: "Evening",
+            description: "Shopping and local delicacies at Mall Road"
+          }
+        ]
+      },
+      {
+        day: 2,
+        title: "Lake Tour and Adventure",
+        activities: [
+          {
+            time: "Morning",
+            description: "Boating in Naini Lake and visit to Naina Devi Temple"
+          },
+          {
+            time: "Afternoon",
+            description: "Cable car ride to Snow View Point"
+          },
+          {
+            time: "Evening",
+            description: "Sunset view from Tiffin Top"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 7,
+    name: "Kerala",
+    Cardimg: kerelaCoverImg,
+    img: KerelaInfoImg,
+    title: "केरल दर्शन",
+    subTitle: "Backwaters, Beaches, and Beautiful Traditions",
+    cost: "45,999/- Only",
+    isUpcoming: true,
+    duration: "Approx 6 night trip",
+    description: "Explore the tropical paradise of Kerala with its backwaters, tea plantations, and rich culture.",
+    mapsIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4016815.454371155!2d74.71497067116893!3d10.538127223674406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0812ffd49cf55b%3A0x64bd90fbed387c99!2sKerala!5e0!3m2!1sen!2sin!4v1704000000000!5m2!1sen!2sin",
+    itineraryData: [
+      {
+        day: 1,
+        title: "Arrival in Kerala",
+        activities: [
+          {
+            time: "Morning",
+            description: "Welcome at Kochi International Airport"
+          },
+          {
+            time: "Afternoon",
+            description: "Fort Kochi tour - Chinese fishing nets and heritage walk"
+          },
+          {
+            time: "Evening",
+            description: "Traditional Kathakali performance and Kerala cuisine dinner"
+          }
+        ]
+      },
+      {
+        day: 2,
+        title: "Munnar Tea Gardens",
+        activities: [
+          {
+            time: "Morning",
+            description: "Drive to Munnar through scenic tea plantations"
+          },
+          {
+            time: "Afternoon",
+            description: "Visit tea museum and tea factory"
+          },
+          {
+            time: "Evening",
+            description: "Sunset view from Top Station"
+          }
+        ]
+      }
+    ]
+  }
 ];
 
 
-// {
-//   id: 4,
-//   name: "Goa",
-//   Cardimg:GoaCoverImg,
-//   img:GoaInfoImg,
-//   title: "Goa",
-//   subTitle: "Sun, Sand, and Stories That’ll Keep You Dancing Till Dawn!",
-//   cost: "9000",
-//   duration: "Approx 5-night trip",
-//   description:
-//     "Bora Bora is a dream destination offering overwater bungalows, scenic views, and unforgettable experiences.",
-//   mapsIframe:
-//     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1036.8074022026033!2d76.4038594499299!3d31.633345308943166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b2a7b793adcfd%3A0x5e65f5500e37035e!2sKashmir%2C%20Himachal%20Pradesh%20177006!5e0!3m2!1sen!2sin!4v1737195230919!5m2!1sen!2sin",
-//   itineraryData: {
-//     title: "Paradise Journey",
-//     dateRange: "05 October - 15 October",
-//     locations: "Vaitape - Matira - Mount Otemanu",
-//     days: [
-//       {
-//         dayNumber: 1,
-//         date: "Day 1",
-//         title: "Arrival and North Goa Beaches",
-//         activities: [
-//           {
-//             icon: "<Plane/>",
-//             title: "Arrival in Goa",
-//             description: "Check into your hotel",
-//             type: "transport",
-//             time: "Morning"
-//           },
-//           {
-//             icon:" <Hotel />",
-//             title: "Calangute Beach",
-//           description: "Queen of Beaches - Perfect for sunbathing and water sports",
-//           type: "attraction",
-//           time: "Afternoon"
-//           },
-//           {
-//             icon: "<Coffee />",
-//             title: "Baga Beach",
-//           description: "Vibrant nightlife and beach shacks",
-//           type: "attraction",
-//           time: "Afternoon"
-//           },
-//           {
-//             icon: "<Coffee />",
-//             title: "Local Markets & Dinner",
-//             description: "Shop for souvenirs and enjoy Goan cuisine at beachside shacks",
-//             type: "leisure",
-//             time: "Evening"
-//           }
-//         ]
-//       },
-//       {
-//         dayNumber: 2,
-//         date: "6 October",
-//         activities: [
-//           {
-//             icon: "<Camera />",
-//             title: "Lagoon Tour",
-//             description: "Snorkeling with rays and sharks",
-//             image: "/api/placeholder/400/200",
-//             type: "attraction",
-//             time: "09:00"
-//           }
-//         ]
-//       }
-//     ]
-//   }
-// },
+
 // {
 //   id: 5,
 //   name: "Udaipur",

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { DestinationsData } from "../utils/constants";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import IForm from "./IForm";
 
 const getTimeIcon = (time) => {
   switch (time.toLowerCase()) {
@@ -92,6 +93,7 @@ export default function AboutDestination() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 my-8">
             {/* Main Content */}
+            
             <div className="lg:col-span-2 space-y-8">
               <div>
                 <h2 className="text-2xl font-bold mb-4">
@@ -144,8 +146,8 @@ export default function AboutDestination() {
                 >
                   View Itinerary
                 </button>
-                <button className="w-full bg-orange-100 text-orange-600 px-6 py-4 rounded-xl font-medium hover:bg-orange-200 transition-colors">
-                  Book Now
+                <button  className="w-full bg-orange-100 text-orange-600 px-6 py-4 rounded-xl font-medium hover:bg-orange-200 transition-colors">
+                  Book Now 
                 </button>
               </div>
             </div>
@@ -175,58 +177,61 @@ export default function AboutDestination() {
 }
 
 const ItineraryModal = ({ data, onClose }) => {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-      <div className="bg-white rounded-2xl w-full max-w-7xl max-h-[90vh] overflow-hidden">
-        <div className="p-6 border-b">
-          <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-bold">Your Journey Details</h2>
-            <button
-              onClick={onClose}
-              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-            >
-              <X className="w-6 h-6" />
-            </button>
-          </div>
+  return ( 
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+    
+    <div className="relative bg-white opacity-85 rounded-2xl w-full max-w-7xl max-h-[90vh] overflow-hidden">
+      <div className="p-4 sm:p-6 border-b">
+        <div className="flex justify-between items-center">
+          <h2 className="text-xl sm:text-2xl font-bold">Your Journey Details</h2>
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+          >
+            <X className="w-6 h-6" />
+          </button>
         </div>
-
-        <div className="overflow-y-auto p-6 max-h-[calc(90vh-80px)]">
-          <div className="space-y-6">
-            {data.itineraryData.map((day) => (
-              <Card
-                key={day.day}
-                className="border-none shadow-md hover:shadow-lg transition-shadow"
-              >
-                <CardHeader className="bg-gray-50">
-                  <CardTitle className="flex items-center gap-3">
-                    <Calendar className="w-5 h-5 text-orange-500" />
-                    <span className="text-lg">
-                      Day {day.day}: {day.title}
-                    </span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-6">
-                  <div className="space-y-6">
-                    {day.activities.map((activity, index) => (
-                      <div key={index} className="flex gap-4">
-                        {getTimeIcon(activity.time)}
-                        <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">
-                            {activity.time}
-                          </h3>
-                          <p className="text-gray-600">
-                            {activity.description}
-                          </p>
-                        </div>
+      </div>
+      
+      <div className="overflow-y-auto md:overflow-x-auto p-4 sm:p-6 border max-h-[calc(90vh-80px)]">
+        {/* Container that switches between column and row layout */}
+        <div className="flex flex-col md:flex-row gap-4 md:min-w-max">
+          {data.itineraryData.map((day) => (
+            <Card
+              key={day.day}
+              className="border-2  rounded-2xl shadow-xl hover:shadow-2xl transition-shadow md:w-80 w-full"
+            >
+              <CardHeader className="bg-gray-50 rounded-2xl">
+                <CardTitle className="flex items-center gap-3">
+                  <Calendar className="w-5 h-5 text-orange-500" />
+                  <span className="text-base sm:text-lg">
+                    Day {day.day}: {day.title}
+                  </span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="space-y-6">
+                  {day.activities.map((activity, index) => (
+                    <div key={index} className="flex gap-4">
+                      {getTimeIcon(activity.time)}
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">
+                          {activity.time}
+                        </h3>
+                        <p className="text-gray-600 text-sm sm:text-base">
+                          {activity.description}
+                        </p>
                       </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 };

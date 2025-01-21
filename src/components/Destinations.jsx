@@ -85,17 +85,17 @@ export default function Destinations() {
                         <img
                           src={info1}
                           alt="info1"
-                          className="w-8 h-8 bg-purple-100 p-1 rounded-full"
+                          className="w-8 h-8 bg-gray-700    p-1 rounded-full"
                         />
                         <img
                           src={info2}
                           alt="info2"
-                          className="w-8 h-8 bg-purple-100 p-1 rounded-full"
+                          className="w-8 h-8 bg-gray-700 p-1 rounded-full"
                         />
                         <img
                           src={info3}
                           alt="info3"
-                          className="w-8 h-8 bg-purple-100 p-1 rounded-full"
+                          className="w-8 h-8 bg-gray-700 p-1 rounded-full"
                         />
                       </div>
                       <div className="text-right">

@@ -23,7 +23,7 @@ function App() {
           <Route path='/destinations' element={<Destinations/>}></Route>
         </Routes>
         <Footer/>
-        <GoaItinerary/>
+
       </Router>
       
       
