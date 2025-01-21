@@ -18,7 +18,6 @@ const Testimonial = () => {
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM4E2VJ1RoM9KgIfnENewfJVuHfAROYvUqzg&s",
     },
-    
   ];
 
   return (
@@ -29,8 +28,7 @@ const Testimonial = () => {
           Testimonial
         </h1>
         <h2 className="text-[32px] md:text-[42px] lg:text-[52px] text-blue-950 font-Volkhov">
-          What people say
-          about Us.
+          What people say about Us.
         </h2>
       </div>
 
