@@ -1,6 +1,5 @@
-import "./App.css";
 import Navbar from "./components/Navbar";
-import ScrollToTop from "../src/utils/scrollTop"; // Import the ScrollToTop component
+import ScrollToTop from "../src/utils/scrollTop";
 import Home from "./components/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AboutDestination from "./components/AboutDestination";
@@ -11,24 +10,24 @@ import Destinations from "./components/Destinations";
 function App() {
   return (
     <>
-     <div >
-      <Router>
-      <ScrollToTop />
-      <Navbar/>
-        <Routes>
-          <Route path='/' element={<Home/>}></Route>
-          <Route path='/destination/:id' element={<AboutDestination/>}></Route>
-          <Route path='/about' element={<AboutUs/>}></Route>
-          <Route path='/IForm' element={<IForm/>}></Route>
-          <Route path='/destinations' element={<Destinations/>}></Route>
-        </Routes>
-        <Footer/>
+      <div>
+        <Router>
+          <ScrollToTop />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route
+              path="/destination/:id"
+              element={<AboutDestination />}
+            ></Route>
+            <Route path="/about" element={<AboutUs />}></Route>
+            <Route path="/IForm" element={<IForm />}></Route>
+            <Route path="/destinations" element={<Destinations />}></Route>
+          </Routes>
 
-      </Router>
-      
-      
-
-     </div>
+          <Footer />
+        </Router>
+      </div>
     </>
   );
 }
