@@ -53,15 +53,17 @@ export const DestinationsData = [
     Cardimg: KashmirCardImg,
     img: kashmirInfoImg,
     title: "Chalo Kashmir",
+    CardsubTitle:"Embark on a Journey to Kashmir: The Crown Jewel of India's Natural Beauty",
+
     subTitle:
-      "Embark on a Journey to Kashmir: The Crown Jewel of India's Natural Beauty",
+      "Nestled in the northernmost region of India, Kashmir is renowned as Paradise on Earth for its breathtaking landscapes, serene valleys, and majestic mountains. Surrounded by the snow-capped peaks of the Himalayas and the Pir Panjal range, Kashmir is a haven for nature lovers, adventure seekers, and peace enthusiasts.",
     originalCost: "30000",
-    cost: "15000",
-    duration: "Approx 5 night trip",
+    cost: "14,999/-",
+    duration: "Approx 5 Days trip",
     isUpcoming: false,
     description: "Discover the Paradise of India: Kashmir  Nestled in the lap of the majestic Himalayas, Kashmir is a land of unparalleled beauty, often referred to as Paradise on Earth. With its snow-capped peaks, lush green valleys, sparkling rivers, and serene lakes, Kashmir offers an enchanting escape for travelers seeking tranquility and adventure.",
     mapsIframe:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1036.8074022026033!2d76.4038594499299!3d31.633345308943166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b2a7b793adcfd%3A0x5e65f5500e37035e!2sKashmir%2C%20Himachal%20Pradesh%20177006!5e0!3m2!1sen!2sin!4v1737195230919!5m2!1sen!2sin",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13222.945235994508!2d74.36274136977383!3d34.05063462051868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e1af91308dd977%3A0x7a5cc65c8fb01df7!2sGulmarg%20193403!5e0!3m2!1sen!2sin!4v1737521901876!5m2!1sen!2sin",
     itineraryData: [
       {
         day: 1,
@@ -187,7 +189,7 @@ export const DestinationsData = [
     Cardimg: JaiselmerCardImg,
     img: JaiselmerInfoImg,
     title: "जैसलमेर चलीए",
-    subTitle:
+    CardsubTitle:
       "Discover the Magic of the Golden City – Where History Meets the Sands",
     cost: "4990/- Only",
     isUpcoming: true,
@@ -244,8 +246,10 @@ export const DestinationsData = [
     Cardimg: ManaliCoverImg,
     img: ManaliInfoImg,
     title: "Manali Ki Vaadiyon Mein",
+    CardsubTitle:"Where snow-capped mountains meet cozy adventures, मनाली awaits you!",
     subTitle:
-      "Where snow-capped mountains meet cozy adventures, मनाली awaits you!",
+      "Nestled in the northernmost region of India, Kashmir is renowned as Paradise on Earth for its breathtaking landscapes, serene valleys, and majestic mountains. Surrounded by the snow-capped peaks of the Himalayas and the Pir Panjal range, Kashmir is a haven for nature lovers, adventure seekers, and peace enthusiasts.",
+
     originalCost: "6999",
     cost: "4990",
     isUpcoming: false,
@@ -318,7 +322,8 @@ export const DestinationsData = [
     Cardimg: GoaCoverImg,
     img: GoaInfoImg,
     title: "Goa",
-    subTitle: "Sun, Sand, and Stories That'll Keep You Dancing Till Dawn!",
+    CardsubTitle: "Sun, Sand, and Stories That'll Keep You Dancing Till Dawn!",
+    subTitle:"Goa, a vibrant coastal state in western India, is renowned for its pristine beaches, lively nightlife, rich Portuguese heritage, and serene backwaters. Nestled between the Arabian Sea and the Western Ghats, Goa is a dream destination for travelers seeking relaxation, adventure, and culture. Its tropical climate, diverse cuisine, and warm hospitality make it one of India's most popular tourist hubs.",
     originalCost: "6999",
     cost: "4990",
     duration: "Approx 4-night trip",
@@ -408,7 +413,7 @@ export const DestinationsData = [
     Cardimg: UdaipurCoverImg,
     img: UdaipurInfoImg,
     title: "उदयपुर की सैर",
-    subTitle: "Experience Royal Rajasthan in the City of Lakes and Palaces",
+    CardsubTitle: "Experience Royal Rajasthan in the City of Lakes and Palaces",
     originalCost: "6999",
     cost: "42,500",
     isUpcoming: true,
@@ -460,7 +465,7 @@ export const DestinationsData = [
     Cardimg: NainitalCardImg,
     img: NainitalInfoImg,
     title: "नैनीताल भ्रमण",
-    subTitle: "Where Mountains Meet Lakes in Perfect Harmony",
+    CardsubTitle: "Where Mountains Meet Lakes in Perfect Harmony",
     cost: "35,999/- Only",
     isUpcoming: true,
     duration: "Approx 3 night trip",
@@ -511,7 +516,7 @@ export const DestinationsData = [
     Cardimg: kerelaCoverImg,
     img: KerelaInfoImg,
     title: "केरल दर्शन",
-    subTitle: "Backwaters, Beaches, and Beautiful Traditions",
+    CardsubTitle: "Backwaters, Beaches, and Beautiful Traditions",
     cost: "45,999/- Only",
     isUpcoming: true,
     duration: "Approx 6 night trip",

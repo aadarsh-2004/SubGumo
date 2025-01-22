@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams ,Link } from "react-router-dom";
 import './ModalStyles.css';
 
 import {
@@ -65,8 +65,8 @@ export default function AboutDestination() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
         <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
           <div className="container mx-auto">
-            <h1 className="text-5xl font-bold mb-4">{destination.title}</h1>
-            <p className="text-xl opacity-90">{destination.subTitle}</p>
+            <h1 className="text-5xl font-bold font-Volkhov mb-4">{destination.title}</h1>
+            {/* <p className="text-xl opacity-90">{destination.subTitle}</p> */}
           </div>
         </div>
       </div>
@@ -110,17 +110,17 @@ export default function AboutDestination() {
                   About the Destination
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
-                  {destination.title}
+                  {destination.subTitle}
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold mb-4">Categories</h2>
                 <div className="flex flex-wrap gap-3">
-                  {["Temples", "Relaxation", "Cultural"].map((category) => (
+                  {["Natural Beauty", "Adventure and Activities", " Historical and Cultural Heritage ","Spiritual Serenity","Handicrafts and Souvenirs","Nature Reserves"].map((category) => (
                     <span
                       key={category}
-                      className="bg-orange-50 text-orange-600 px-4 py-2 rounded-full text-sm font-medium"
+                      className="bg-blue-50 text-black shadow-md  px-4 py-2 rounded-xl  text-sm font-medium"
                     >
                       {category}
                     </span>
@@ -131,13 +131,13 @@ export default function AboutDestination() {
 
             {/* Sidebar */}
             <div className="space-y-6">
-              <div className="bg-orange-50 rounded-xl p-6">
+              <div className="bg-gray-50 rounded-xl shadow-2xl p-6">
                 <h3 className="text-xl font-bold mb-4">Price Details</h3>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Starting from</span>
-                    <span className="text-2xl font-bold text-orange-600">
-                      {destination.cost}
+                    <span className="text-2xl  font-poppins font-bold  bg-gradient-to-r from-purple-600 to-orange-600 bg-clip-text text-clip-border text-transparent">
+                    ₹{destination.cost}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
@@ -156,9 +156,12 @@ export default function AboutDestination() {
                 >
                   View Itinerary
                 </button>
-                <button className="w-full bg-orange-100 text-orange-600 px-6 py-4 rounded-xl font-medium hover:bg-orange-200 transition-colors">
+                <Link  to="/IForm">
+              
+                <button className="w-full bg-gray-50 shadow-2xl  text-lg border-[2px] border-purple-500  bg-gradient-to-r from-purple-600 to-orange-600 bg-clip-text text-clip-border text-transparent px-6 py-4 rounded-xl font-bold hover:bg-orange-200 transition-colors">
                   Book Now
                 </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -280,7 +283,8 @@ const ItineraryModal = ({ data, onClose }) => {
           className="p-4 overflow-y-auto max-h-[calc(100vh-200px)]"
           onScroll={handleScroll}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2
+           gap-4">
             {data.itineraryData[selectedDay]?.activities.map(
               (activity, index) => (
                 <Card

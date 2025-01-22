@@ -30,7 +30,7 @@ export const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#about"
+                  href="/about"
                   className="text-gray-700 hover:text-blue-600 transition duration-300 text-sm md:text-base"
                 >
                   About Us
@@ -38,7 +38,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#destinations"
+                  href="/destinations"
                   className="text-gray-700 hover:text-blue-600 transition duration-300 text-sm md:text-base"
                 >
                   Destinations
@@ -46,7 +46,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href="/IForm"
                   className="text-gray-700 hover:text-blue-600 transition duration-300 text-sm md:text-base"
                 >
                   Contact Us
@@ -89,23 +89,20 @@ export const Footer = () => {
             </h3>
             <div className="flex items-center space-x-4 mb-4">
               <h3 className="font-medium text-sm md:text-base">
-                Contact No.: 7877571101
+                Contact No.: 8239498447 
               </h3>
+              <a href="https://wa.me/918239498447">
               <IoLogoWhatsapp className="text-black text-2xl cursor-pointer hover:text-[#46c030] transition duration-300" />
+              </a>
+
+              <a href="https://www.instagram.com/sabgumo/">
               <FaInstagram className="text-black cursor-pointer hover:text-pink-600 text-2xl" />
+              </a>
             </div>
 
-            {/* Newsletter */}
-            <div className="flex flex-col space-y-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full p-2 border border-gray-300 rounded-md text-gray-900 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button className="w-full p-2 bg-blue-600 rounded-md text-white text-sm md:text-base hover:bg-blue-700 transition duration-300">
-                Subscribe
-              </button>
-            </div>
+            
+            
+          
           </div>
         </div>
       </div>

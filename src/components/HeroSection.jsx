@@ -24,9 +24,9 @@ const HeroSection = () => {
             </h1>
             <p className="text-[8px] md:text-[17px]">
         Your gateway to{' '}
-        <span className="text-blue-600 font-semibold">unparalleled</span>{' '}
+        <span className=" font-semibold">unparalleled</span>{' '}
         travel experiences. We're a team of{' '}
-        <span className="text-emerald-600 font-semibold">passionate</span>{' '}
+        <span className=" font-semibold">passionate</span>{' '}
         travelers, explorers, and storytellers dedicated to helping you discover the{' '}
         <span className="text-purple-600 font-semibold">hidden gems</span>{' '}
         of our world.

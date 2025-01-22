@@ -74,7 +74,7 @@ export default function Destinations() {
                   {destination.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-4">
-                  {destination.subTitle}
+                  {destination.CardsubTitle}
                 </p>
 
                 {/* Info Icons and Price - Only shown for non-upcoming tours */}
@@ -104,8 +104,8 @@ export default function Destinations() {
                             ₹{destination.originalCost}/-
                           </div>
                           <div className="flex items-center">
-                            <h4 className="text-lg font-bold text-purple-600">
-                              ₹{destination.cost}/-
+                            <h4 className="text-lg font-bold bg-gradient-to-r from-purple-600 to-orange-600 bg-clip-text text-clip-border text-transparent">
+                              ₹{destination.cost}
                             </h4>
                             <span className="ml-2 text-xs font-medium bg-green-100 text-green-600 px-2 py-1 rounded">
                               Save ₹

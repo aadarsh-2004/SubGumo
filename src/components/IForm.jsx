@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Calendar, Send, User, Mail, Phone, MapPin, Users, MessageSquare, MessageCircle } from 'lucide-react';
+import { Calendar, Send, User, Mail, Phone, MapPin, Users, MessageSquare } from 'lucide-react';
 import { IoLogoWhatsapp } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom'; // Import for navigation
+
 const IForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -13,13 +15,16 @@ const IForm = () => {
     message: '',
   });
 
+  const [showPopup, setShowPopup] = useState(false); // Popup state
+  const navigate = useNavigate(); // For navigation
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       // Send form data to the backend
-      const response = await axios.post('http://localhost:5000/send-email', formData);
-      alert(response.data.message);
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/send-email`, formData);
+      setShowPopup(true); // Show popup on success
 
       // Reset form data
       setFormData({
@@ -31,6 +36,12 @@ const IForm = () => {
         travelDates: '',
         message: '',
       });
+
+      // Close popup and redirect after 2 seconds
+      setTimeout(() => {
+        setShowPopup(false);
+        navigate('/'); // Redirect to /home
+      }, 2000);
     } catch (error) {
       console.error('Error sending email:', error);
       alert('Failed to send inquiry. Please try again later.');
@@ -46,15 +57,14 @@ const IForm = () => {
 
   const handleWhatsAppChat = () => {
     const message = `Hi, I’d like to inquire about a trip. `;
-    const whatsappLink = `https://wa.me/7877571101?text=${encodeURIComponent(message)}`;
+    const whatsappLink = `https://wa.me/8239498447?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
   };
 
   return (
-    <div className=" min-h-screen  bg-[#ffeed8] py-12  pt-24 px-4 sm:px-6 lg:px-8">
-      <div className=" max-w-4xl mx-auto">
-        <div className="text-center  mb-12">
-
+    <div className="min-h-screen bg-[#ffeed8] py-12 pt-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-black sm:text-4xl mb-4">Start Your Journey</h2>
           <p className="text-lg text-gray-700">
             Fill out the form below or chat with us on WhatsApp to plan your dream trip!
@@ -104,12 +114,11 @@ const IForm = () => {
                   required
                 />
               </div>
-
             </div>
-            {/* Phone and Destination Row */}
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className=" text-sm font-medium text-gray-700 mb-2 flex items-center">
+                <label className="text-sm font-medium text-gray-700 mb-2 flex items-center">
                   <Phone className="w-4 h-4 mr-2" />
                   Phone Number
                 </label>
@@ -124,7 +133,7 @@ const IForm = () => {
                 />
               </div>
               <div>
-                <label className=" text-sm font-medium text-gray-700 mb-2 flex items-center">
+                <label className="text-sm font-medium text-gray-700 mb-2 flex items-center">
                   <MapPin className="w-4 h-4 mr-2" />
                   Preferred Destination
                 </label>
@@ -146,7 +155,6 @@ const IForm = () => {
               </div>
             </div>
 
-            {/* Guests and Travel Dates Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
@@ -180,7 +188,6 @@ const IForm = () => {
               </div>
             </div>
 
-            {/* Message Field */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
                 <MessageSquare className="w-4 h-4 mr-2" />
@@ -197,8 +204,6 @@ const IForm = () => {
               ></textarea>
             </div>
 
-            
-
             <div className="flex justify-center">
               <button
                 type="submit"
@@ -211,6 +216,16 @@ const IForm = () => {
           </form>
         </div>
       </div>
+
+      {/* Popup Modal */}
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg p-6 text-center shadow-xl">
+            <h2 className="text-xl font-bold text-green-600 mb-4">Inquiry Sent Successfully!</h2>
+            <p className="text-gray-700">Thank you for reaching out. Redirecting you to the home page...</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

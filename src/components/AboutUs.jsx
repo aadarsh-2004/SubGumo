@@ -1,23 +1,14 @@
 import React from 'react';
 import { User, Globe2, Heart } from 'lucide-react';
-
+import profile from '../assets/profile.jpg'
 const AboutUs = () => {
   const teamMembers = [
     {
-      name: "Sarah Chen",
-      role: "Travel Expert - Asia Pacific",
-      bio: "10+ years exploring hidden gems across Asia"
+      name: "Mr. Ravi ",
+      role: "Trip Planner & Organizer",
+      bio: "8+ years exploring hidden gems across India"
     },
-    {
-      name: "Marcus Rodriguez",
-      role: "Adventure Specialist",
-      bio: "Passionate about creating thrilling experiences"
-    },
-    {
-      name: "Emma Thompson",
-      role: "Cultural Tourism Expert",
-      bio: "Specialized in immersive cultural experiences"
-    }
+
   ];
 
   return (
@@ -57,13 +48,13 @@ const AboutUs = () => {
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center mb-10">
             <User className="w-8 h-8 text-green-500 mr-3" />
-            <h2 className="text-3xl font-bold text-gray-800">Meet the Team</h2>
+            <h2 className="text-3xl font-bold text-gray-800">Meet the Founder</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
                 <div className="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <User className="w-10 h-10 text-gray-400" />
+                  <img src={profile} className="w-20 h-20 rounded-full shadow-md" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 text-center mb-2">{member.name}</h3>
                 <p className="text-blue-600 text-center mb-3">{member.role}</p>

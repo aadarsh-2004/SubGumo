@@ -167,7 +167,7 @@ const Navbar = () => {
 
           <div className="flex justify-center gap-6 mt-8 lg:mt-0 lg:ml-6 transition-all duration-500">
             <SocialButton
-              href="https://wa.me/917877571101"
+              href="https://wa.me/918239498447"
               icon={IoLogoWhatsapp}
               gradientFrom="#4ade80"
               gradientTo="#16a34a"
@@ -175,7 +175,7 @@ const Navbar = () => {
               label="WhatsApp"
             />
             <SocialButton
-              href="https://www.instagram.com/your_instagram_handle"
+              href="https://www.instagram.com/sabgumo/"
               icon={FaInstagram}
               gradientFrom="#ec4899"
               gradientTo="#a855f7"
